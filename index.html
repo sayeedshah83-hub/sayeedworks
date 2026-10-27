@@ -1,0 +1,446 @@
+<!doctype html>
+<!--
+ SAYEED. PORTFOLIO  -  one plain HTML file. Works on any hosting, no PHP needed.
+ UPLOAD: put this file (named index.html) and an "images" folder in public_html.
+ PICTURES: add these files to the images folder. Until then a placeholder shows.
+   hero.jpg  profile.jpg  project-01.jpg  concept-works.jpg  project-03.jpg
+   concept-planning.jpg  concept-revit.jpg  concept-twinmotion.jpg  concept-creative.jpg
+ EDIT TEXT: open in Notepad, use Find (Ctrl+F) for the words you want to change.
+ COLOURS: change <html data-theme="champagne"> to midnight, ember, slate or emerald.
+-->
+<html lang="en" data-theme="champagne">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAYEED. | Civil Engineer, BIM Engineer &amp; Architectural Designer</title>
+<meta name="description" content="Explore SAYEED&#x27;s residential architectural projects, AutoCAD drawings, Revit BIM models, Twinmotion visualizations, concept works, and building design services in Tamil Nadu, India.">
+<meta name="theme-color" content="#101112">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SAYEED.">
+<meta property="og:title" content="SAYEED. | Civil Engineer, BIM Engineer &amp; Architectural Designer"><meta property="og:description" content="Explore SAYEED&#x27;s residential architectural projects, AutoCAD drawings, Revit BIM models, Twinmotion visualizations, concept works, and building design services in Tamil Nadu, India.">
+<meta property="og:image" content="images/hero.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23101112'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='%23C9A66B' font-family='Arial' font-weight='700'%3ES.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--bg:#101112;--bg2:#191A1C;--card:#202123;--text:#F5F4F0;--muted:#A7A7A7;--accent:#C9A66B;--border:#303033;--ink:#101112;--accent-rgb:201,166,107;
+--head:'Space Grotesk','Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.7 var(--body);overflow-x:hidden;transition:background .3s,color .3s}
+body.noscroll{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;font-weight:600;letter-spacing:-.02em}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--ink);padding:8px 14px;z-index:300}
+.skip:focus{left:8px}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 24px}
+.muted{color:var(--muted)}.small{font-size:.85rem}.center{text-align:center}
+.label,.eyebrow,.label-lg{font:600 .72rem/1.4 var(--head);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+.label-lg{font-size:.9rem;margin:0}
+.eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:var(--accent);vertical-align:middle;margin-right:12px}
+.h3{font-size:1.6rem;margin-bottom:18px}
+.note{color:var(--accent);font-size:.85rem;letter-spacing:.04em}
+
+.js .reveal.in{opacity:1;transform:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;background:var(--accent);color:var(--ink);font:600 .78rem/1 var(--head);letter-spacing:.14em;border:1px solid var(--accent);cursor:pointer;transition:background .25s,color .25s,transform .25s;min-height:46px}
+.btn:hover{background:transparent;color:var(--accent);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:12px 20px;font-size:.7rem}
+.btn[disabled]{opacity:.6;cursor:wait}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 0}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.solid,.hdr.open{background:rgba(var(--bg-rgb,16,17,18),.0);background:var(--bg);border-bottom-color:var(--border)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font:700 1.45rem/1 var(--head);letter-spacing:.04em}
+.brand span{color:var(--accent)}
+#nav{display:flex;align-items:center;gap:30px}
+#nav a:not(.btn){font:500 .78rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);position:relative;padding:6px 0;transition:color .25s}
+#nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+#nav a:not(.btn):hover,#nav a.active{color:var(--text)}
+#nav a:not(.btn):hover::after,#nav a.active::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:1px solid var(--border);width:46px;height:46px;cursor:pointer;padding:0;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--text);transition:transform .3s,opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+.open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}.open .burger i:nth-child(2){opacity:0}.open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;background:radial-gradient(900px 500px at 85% 20%,rgba(var(--accent-rgb),.08),transparent 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.4vw,5.6rem);margin-bottom:26px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.08rem;color:var(--muted);max-width:60ch}
+.loc{display:flex;align-items:center;gap:12px;margin:38px 0 0;font:500 .72rem/1 var(--head);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.loc i{width:36px;height:1px;background:var(--accent)}
+.hero-media{position:relative;aspect-ratio:4/5;max-height:76vh;width:100%;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+.hero-media img,.about-photo img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:14px;border:1px solid rgba(var(--accent-rgb),.35);pointer-events:none}
+.scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:22px;height:38px;border:1px solid var(--border);border-radius:12px;display:block}
+.scroll span{position:absolute;left:50%;top:8px;width:3px;height:7px;margin-left:-1.5px;background:var(--accent);border-radius:2px;animation:sc 1.8s infinite}
+@keyframes sc{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+.ph-badge{position:absolute;left:12px;top:12px;z-index:3;background:rgba(0,0,0,.72);color:var(--accent);font:600 .6rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border:1px solid rgba(var(--accent-rgb),.5)}
+
+/* tools strip */
+.tools{background:var(--bg2);border-block:1px solid rgba(var(--accent-rgb),.45);padding:34px 0 26px}
+.tools-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 30px;margin-bottom:22px}
+.tools-head p{margin:0}
+.tools-strip{display:flex;flex-wrap:wrap}
+.tgroup{flex:1 1 auto;padding:4px 28px;border-left:1px solid var(--border)}
+.tgroup:first-child{padding-left:0;border-left:0}
+.tgroup h3{font:600 .66rem/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.tgroup ul{display:flex;flex-wrap:wrap;gap:10px 22px}
+.tool{display:flex;align-items:center;gap:10px;font:500 .86rem/1.2 var(--head);transition:transform .25s,color .25s}
+.tool:hover{transform:translateY(-2px);color:var(--accent)}
+.tool b,.tool img{width:34px;height:34px;flex:none;display:grid;place-items:center;border:1px solid var(--border);background:var(--card);font:700 .78rem/1 var(--head);color:var(--accent);object-fit:contain;padding:0}
+.tool img{padding:5px}
+.tools-close{margin:22px 0 0;text-align:center;font:600 .78rem/1 var(--head);letter-spacing:.34em;color:var(--accent)}
+
+/* sections */
+.sec{padding:100px 0}.sec.tight{padding:56px 0}.sec.alt{background:var(--bg2);border-block:1px solid var(--border)}
+.sec-head{max-width:720px;margin-bottom:46px}
+.sec-head h2,.cta h2{font-size:clamp(2rem,4.2vw,3.4rem)}
+.sec-head p{margin-top:16px}
+.page-head{padding:150px 0 40px}
+.page-head h1{font-size:clamp(2.2rem,5.2vw,4.4rem);margin-bottom:20px;max-width:18ch}
+.page-head .lead{margin-bottom:0}
+.back{display:inline-block;color:var(--muted);font:500 .78rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px}.back:hover{color:var(--accent)}
+.head-badges{margin-top:20px}
+.card{background:var(--card);border:1px solid var(--border);padding:30px;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(var(--accent-rgb),.55)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.closing{margin:46px 0 0;text-align:center;font:500 1.05rem/1.5 var(--head);color:var(--accent);letter-spacing:.02em}
+
+/* project cards */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:40px}
+.pcard{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.pcard:hover{border-color:rgba(var(--accent-rgb),.6)}
+.pcard[hidden]{display:none}
+.pcard-img{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--bg2)}
+.pcard-img img,.gimg img,.shot img,.proj-hero img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.pcard:hover .pcard-img img,.gimg:hover img,.shot:hover img{transform:scale(1.05)}
+.pnum{position:absolute;right:14px;bottom:10px;font:700 2.6rem/1 var(--head);color:rgba(255,255,255,.85);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.badge{position:absolute;left:12px;bottom:12px;background:var(--bg);color:var(--accent);border:1px solid rgba(var(--accent-rgb),.6);font:600 .62rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
+.head-badges .badge{position:static;display:inline-block}
+.k-ongoing{background:var(--accent);color:var(--ink)}
+.pcard-body{padding:24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pcard-body h3{font-size:1.4rem;margin-bottom:6px}
+.pcard-body .btn{margin-top:auto;align-self:flex-start}
+.pcard-body .tags{margin:8px 0 16px}
+.mini{display:flex;flex-wrap:wrap;gap:6px 22px;margin:4px 0 6px}
+.mini dt{font:600 .62rem/1 var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mini dd{margin:3px 0 0;font:500 .9rem/1.2 var(--head)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags li,.tag{font:500 .7rem/1 var(--head);letter-spacing:.08em;padding:7px 11px;border:1px solid var(--border);color:var(--muted);background:var(--bg2)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.chip{background:transparent;border:1px solid var(--border);color:var(--muted);padding:11px 20px;font:600 .7rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.25s;min-height:42px}
+.chip:hover{color:var(--text);border-color:var(--accent)}
+.chip.on{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+
+/* project detail */
+.proj-hero{margin:0;aspect-ratio:16/8;position:relative;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;background:var(--card)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.facts div{padding:14px 0;border-bottom:1px solid var(--border)}
+.facts dt{font:600 .62rem/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts dd{margin:0;font:500 1.05rem/1.3 var(--head)}
+.reqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px}
+.ticks li{position:relative;padding:7px 0 7px 26px;color:var(--text)}
+.ticks li::before{content:"";position:absolute;left:0;top:17px;width:12px;height:1px;background:var(--accent)}
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:24px}
+.stage h3{font-size:1.4rem;margin-bottom:10px}
+.shot,.gimg{margin:0;position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;border:1px solid var(--border);background:var(--card)}
+.shot{margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.gitem{margin:0}.gitem[hidden]{display:none}
+.gitem figcaption{display:flex;flex-direction:column;gap:6px;padding-top:14px;align-items:flex-start}
+.gitem strong{font:600 1.1rem/1.2 var(--head)}
+.next{padding:70px 0;border-top:1px solid var(--border);text-align:center}
+.next-link{font:600 clamp(1.6rem,4vw,2.8rem)/1.1 var(--head);transition:color .25s}
+.next-link span{color:var(--accent)}.next-link:hover{color:var(--accent)}
+.cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,var(--bg),var(--bg2));border-top:1px solid var(--border)}
+.cta p{max-width:56ch;margin:18px auto 30px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.about-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+.identity{font:500 1.1rem/1.3 var(--head);margin-bottom:22px}
+.edu-line{padding-top:18px;border-top:1px solid var(--border);color:var(--muted)}
+.edu-line b{color:var(--text)}
+.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:70px}
+.hl-item{border-top:1px solid var(--accent);padding-top:18px}
+.hl-item span,.snum{font:700 .8rem/1 var(--head);color:var(--accent);letter-spacing:.14em}
+.hl-item h3{margin:12px 0 8px;font-size:1.25rem}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.skill h3{font-size:1.2rem;margin:14px 0 14px}
+.skill li{padding:6px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:.95rem}
+.skill.dev{border-style:dashed}
+.steps li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.steps li>span{font:700 1.6rem/1 var(--head);color:var(--accent);min-width:44px}
+.steps h3{font-size:1.1rem;letter-spacing:.1em;margin-bottom:6px}
+.steps p{margin:0}
+.awards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.award h3{font-size:1.25rem;margin-bottom:6px}
+.award-img{aspect-ratio:4/3;overflow:hidden;margin:-30px -30px 20px;cursor:zoom-in}.award-img img{width:100%;height:100%;object-fit:cover}
+
+/* services */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:34px}
+.svc{display:flex;flex-direction:column;gap:12px}
+.svc:hover{transform:translateY(-4px)}
+.svc-top{display:flex;justify-content:space-between;align-items:center;color:var(--accent)}
+.svc h3{font-size:1.35rem}
+.svc .ticks li{font-size:.92rem;padding:4px 0 4px 26px}.svc .ticks li::before{top:14px}
+.price{border-top:1px solid var(--border);padding-top:14px;margin-top:auto}
+.price small{display:block;font:600 .62rem/1 var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.price strong{font:600 1.5rem/1.1 var(--head);color:var(--accent)}
+.price .quote{font-size:1rem;color:var(--muted);font-weight:500}
+.svc .btn{align-self:flex-start}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.clist{margin:26px 0 0}
+.clist li{display:flex;flex-direction:column;padding:14px 0;border-bottom:1px solid var(--border);word-break:break-word}
+.clist .label{margin-bottom:4px}
+.clist a:hover{color:var(--accent)}
+.cform{display:flex;flex-direction:column;gap:16px}
+.cform label{display:flex;flex-direction:column;gap:7px;font:600 .68rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cform input,.cform select,.cform textarea{background:var(--bg);color:var(--text);border:1px solid var(--border);padding:13px 14px;font:400 1rem/1.4 var(--body);letter-spacing:0;text-transform:none;border-radius:0;width:100%}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--accent)}
+.cform textarea{resize:vertical}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.form-status{margin:0;min-height:1.4em;font-size:.92rem}.form-status.ok{color:#6fcf97}.form-status.err{color:#ff8a80}.form-status a{text-decoration:underline}
+
+/* footer */
+.ftr{border-top:1px solid var(--border);background:var(--bg2);padding:60px 0 24px}
+.ftr-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ftr-grid p{margin:8px 0 0}
+.ftr-nav,.ftr-soc{display:flex;flex-direction:column;gap:10px}
+.ftr-nav a,.ftr-soc a{color:var(--muted);font:500 .8rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase}
+.ftr-nav a:hover,.ftr-soc a:hover{color:var(--accent)}
+.ftr-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;flex-wrap:wrap}
+.totop{background:none;border:1px solid var(--border);color:var(--muted);padding:10px 16px;cursor:pointer;font:600 .7rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase}
+.totop:hover{color:var(--accent);border-color:var(--accent)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:30px}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(1400px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb img{max-width:100%;max-height:82vh;object-fit:contain;background:#fff1}
+.lb figcaption{color:#ddd;font-size:.9rem;text-align:center}
+.lb-x{position:absolute;top:16px;right:16px;width:46px;height:46px;background:var(--card);color:var(--text);border:1px solid var(--border);cursor:pointer;font-size:1.1rem}
+.load-err{padding:30vh 24px;text-align:center}
+
+/* responsive */
+@media(max-width:1020px){
+ .pgrid,.skills,.sgrid{grid-template-columns:repeat(2,1fr)}
+ .hero-grid{gap:36px}.two,.about-grid,.contact-grid{gap:36px}
+ .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .burger{display:block}
+ #nav{position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--border);transform:translateY(-12px);opacity:0;visibility:hidden;transition:transform .3s var(--ease),opacity .3s,visibility .3s}
+ .open #nav{transform:none;opacity:1;visibility:visible}
+ #nav a:not(.btn){padding:16px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+ #nav a:not(.btn)::after{display:none}
+ #nav .btn{margin-top:18px}
+ .hero{padding:96px 0 70px;min-height:0}
+ .hero-grid{grid-template-columns:1fr}
+ .hero-media{order:-1;aspect-ratio:4/3;max-height:none}
+ .scroll{display:none}
+ .two,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .about-photo{max-width:420px}
+ .tgroup{flex:1 1 100%;padding:14px 0;border-left:0;border-top:1px solid var(--border)}
+ .tgroup:first-child{border-top:0}
+ .tgroup ul{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .hl{grid-template-columns:1fr}
+ .sec{padding:72px 0}.page-head{padding:116px 0 24px}
+ .proj-hero{aspect-ratio:4/3}
+}
+@media(max-width:640px){
+ .pgrid,.skills,.sgrid{grid-template-columns:1fr}
+ .facts{grid-template-columns:1fr}
+ .ftr-grid{grid-template-columns:1fr}
+ .btn{width:100%}.btns .btn{flex:1 1 100%}
+ .btn-sm{width:auto}
+ .gallery{grid-template-columns:1fr}
+ .wrap{padding:0 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .js .reveal{opacity:1;transform:none}
+}
+:root{--ph-plan:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBsYWNlaG9sZGVyIGZsb29yIHBsYW4gZHJhd2luZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMWQxZjIyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTQxNTE3Ii8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0icCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNNDAgMEgwVjQwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIuMDQiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0idXJsKCNwKSIvPjxyZWN0IHg9IjIyOCIgeT0iMTQ0IiB3aWR0aD0iNzQ0IiBoZWlnaHQ9IjU1OCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS13aWR0aD0iNCIvPjxsaW5lIHgxPSI1NjIiIHkxPSIxNDQiIHgyPSI1NjIiIHkyPSI0NzgiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIyOCIgeTE9IjQ3OCIgeDI9Ijk3MiIgeTI9IjQ3OCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNzYzIiB5MT0iNDc4IiB4Mj0iNzYzIiB5Mj0iNzAyIiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuNzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyMjgiIHkxPSIxMjAiIHgyPSI5NzIiIHkyPSIxMjAiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMjI4IiB5MT0iMTEyIiB4Mj0iMjI4IiB5Mj0iMTI4IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGxpbmUgeDE9Ijk3MiIgeTE9IjExMiIgeDI9Ijk3MiIgeTI9IjEyOCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjYwMCIgeT0iODEwIiBmaWxsPSIjQzlBNjZCIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjYiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5QTEFDRUhPTERFUiBJTUFHRTwvdGV4dD48dGV4dCB4PSI2MDAiIHk9Ijg0NiIgZmlsbD0iI2E3YTdhNyIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BZGQgeW91ciBpbWFnZSB0byB0aGUgaW1hZ2VzIGZvbGRlcjwvdGV4dD48L3N2Zz4=");--ph-model:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBsYWNlaG9sZGVyIDNEIG1vZGVsIHZpZXciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzFkMWYyMiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0MTUxNyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdHRlcm4gaWQ9InAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTQwIDBIMFY0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utb3BhY2l0eT0iLjA0Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9InVybCgjcCkiLz48cG9seWdvbiBwb2ludHM9IjYwMCwxODAgODM0LDI5NyA2MDAsNDE0IDM2NiwyOTciIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBvbHlnb24gcG9pbnRzPSIzNjYsMjk3IDYwMCw0MTQgNjAwLDY0OCAzNjYsNTMxIiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuNzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjxwb2x5Z29uIHBvaW50cz0iODM0LDI5NyA2MDAsNDE0IDYwMCw2NDggODM0LDUzMSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48cG9seWdvbiBwb2ludHM9IjYwMCw2My4wIDc0MC40LDE0NC45MDAwMDAwMDAwMDAwMyA2MDAsMjI2Ljc5OTk5OTk5OTk5OTk4IDQ1OS42LDE0NC45MDAwMDAwMDAwMDAwMyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjYwMCIgeT0iODEwIiBmaWxsPSIjQzlBNjZCIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjYiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5QTEFDRUhPTERFUiBJTUFHRTwvdGV4dD48dGV4dCB4PSI2MDAiIHk9Ijg0NiIgZmlsbD0iI2E3YTdhNyIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BZGQgeW91ciBpbWFnZSB0byB0aGUgaW1hZ2VzIGZvbGRlcjwvdGV4dD48L3N2Zz4=");--ph-render:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBsYWNlaG9sZGVyIGFyY2hpdGVjdHVyYWwgcmVuZGVyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZDFmMjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNDE1MTciLz48L2xpbmVhckdyYWRpZW50PjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik00MCAwSDBWNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI3ApIi8+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjY2IiBmaWxsPSIjMjMyYTMzIiBvcGFjaXR5PSIuNTUiLz48Y2lyY2xlIGN4PSI5NjAiIGN5PSIxODAiIHI9IjYwIiBmaWxsPSIjQzlBNjZCIiBvcGFjaXR5PSIuMjUiLz48bGluZSB4MT0iOTYiIHkxPSI2NjYiIHgyPSIxMTA0IiB5Mj0iNjY2IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuNzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjI2NCIgeT0iMjg4IiB3aWR0aD0iNjcyIiBoZWlnaHQ9IjM3OCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyNTAiIHk9IjI3NCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSIxNCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjY0IiB5MT0iNDc3IiB4Mj0iOTM2IiB5Mj0iNDc3IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iMzMxIiB5PSIzMjUiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNTMyIiB5PSIzMjUiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNzM0IiB5PSIzMjUiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iMzMxIiB5PSI1MTQiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNTMyIiB5PSI1MTQiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNzM0IiB5PSI1MTQiIHdpZHRoPSIxMzQiIGhlaWdodD0iMTA1IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNzM0IiB5PSI1MzgiIHdpZHRoPSIxMDciIGhlaWdodD0iMTI4IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuNzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyNjQiIHkxPSI3MDAiIHgyPSI5MzYiIHkyPSI3MDAiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMjY0IiB5MT0iNjkyIiB4Mj0iMjY0IiB5Mj0iNzA4IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGxpbmUgeDE9IjkzNiIgeTE9IjY5MiIgeDI9IjkzNiIgeTI9IjcwOCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjYwMCIgeT0iODEwIiBmaWxsPSIjQzlBNjZCIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjYiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5QTEFDRUhPTERFUiBJTUFHRTwvdGV4dD48dGV4dCB4PSI2MDAiIHk9Ijg0NiIgZmlsbD0iI2E3YTdhNyIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BZGQgeW91ciBpbWFnZSB0byB0aGUgaW1hZ2VzIGZvbGRlcjwvdGV4dD48L3N2Zz4=");--ph-gen:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBsYWNlaG9sZGVyIGFyY2hpdGVjdHVyYWwgZWxldmF0aW9uIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZDFmMjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNDE1MTciLz48L2xpbmVhckdyYWRpZW50PjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik00MCAwSDBWNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSJ1cmwoI3ApIi8+PGxpbmUgeDE9Ijk2IiB5MT0iNjY2IiB4Mj0iMTEwNCIgeTI9IjY2NiIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyNjQiIHk9IjI4OCIgd2lkdGg9IjY3MiIgaGVpZ2h0PSIzNzgiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjUwIiB5PSIyNzQiIHdpZHRoPSI3MDAiIGhlaWdodD0iMTQiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI2NCIgeTE9IjQ3NyIgeDI9IjkzNiIgeTI9IjQ3NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjMzMSIgeT0iMzI1IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjUzMiIgeT0iMzI1IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjczNCIgeT0iMzI1IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjMzMSIgeT0iNTE0IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjUzMiIgeT0iNTE0IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjczNCIgeT0iNTE0IiB3aWR0aD0iMTM0IiBoZWlnaHQ9IjEwNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjczNCIgeT0iNTM4IiB3aWR0aD0iMTA3IiBoZWlnaHQ9IjEyOCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjY0IiB5MT0iNzAwIiB4Mj0iOTM2IiB5Mj0iNzAwIiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGxpbmUgeDE9IjI2NCIgeTE9IjY5MiIgeDI9IjI2NCIgeTI9IjcwOCIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxsaW5lIHgxPSI5MzYiIHkxPSI2OTIiIHgyPSI5MzYiIHkyPSI3MDgiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48dGV4dCB4PSI2MDAiIHk9IjgxMCIgZmlsbD0iI0M5QTY2QiIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI2IiBsZXR0ZXItc3BhY2luZz0iNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+UExBQ0VIT0xERVIgSU1BR0U8L3RleHQ+PHRleHQgeD0iNjAwIiB5PSI4NDYiIGZpbGw9IiNhN2E3YTciIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QWRkIHlvdXIgaW1hZ2UgdG8gdGhlIGltYWdlcyBmb2xkZXI8L3RleHQ+PC9zdmc+");--ph-hero:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEyNTAiIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEyNTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUGxhY2Vob2xkZXIgaGVybyB2aXN1YWxpemF0aW9uIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZDFmMjIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxNDE1MTciLz48L2xpbmVhckdyYWRpZW50PjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik00MCAwSDBWNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iMTI1MCIgZmlsbD0idXJsKCNnKSIvPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEyNTAiIGZpbGw9InVybCgjcCkiLz48cmVjdCB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MjUiIGZpbGw9IiMyMzJhMzMiIG9wYWNpdHk9Ii41NSIvPjxjaXJjbGUgY3g9IjgwMCIgY3k9IjI1MCIgcj0iNTAiIGZpbGw9IiNDOUE2NkIiIG9wYWNpdHk9Ii4yNSIvPjxsaW5lIHgxPSI4MCIgeTE9IjkyNSIgeDI9IjkyMCIgeTI9IjkyNSIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjc1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyMjAiIHk9IjQwMCIgd2lkdGg9IjU2MCIgaGVpZ2h0PSI1MjUiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjA2IiB5PSIzODYiIHdpZHRoPSI1ODgiIGhlaWdodD0iMTQiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIyMCIgeTE9IjY2MiIgeDI9Ijc4MCIgeTI9IjY2MiIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjI3NiIgeT0iNDUyIiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjQ0NCIgeT0iNDUyIiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjYxMiIgeT0iNDUyIiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjI3NiIgeT0iNzE1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjQ0NCIgeT0iNzE1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjYxMiIgeT0iNzE1IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjE0NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjYxMiIgeT0iNzQ3IiB3aWR0aD0iODkiIGhlaWdodD0iMTc4IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuNzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyMjAiIHkxPSI5NTkiIHgyPSI3ODAiIHkyPSI5NTkiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMjIwIiB5MT0iOTUxIiB4Mj0iMjIwIiB5Mj0iOTY3IiBzdHJva2U9IiNDOUE2NkIiIHN0cm9rZS1vcGFjaXR5PSIuMzUiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGxpbmUgeDE9Ijc4MCIgeTE9Ijk1MSIgeDI9Ijc4MCIgeTI9Ijk2NyIgc3Ryb2tlPSIjQzlBNjZCIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjUwMCIgeT0iMTEyNSIgZmlsbD0iI0M5QTY2QiIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+UExBQ0VIT0xERVIgSU1BR0U8L3RleHQ+PHRleHQgeD0iNTAwIiB5PSIxMTU1IiBmaWxsPSIjYTdhN2E3IiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFkZCB5b3VyIGltYWdlIHRvIHRoZSBpbWFnZXMgZm9sZGVyPC90ZXh0Pjwvc3ZnPg==");--ph-prof:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEyNTAiIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEyNTAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUGxhY2Vob2xkZXIgcHJvZmlsZSBwaG90byI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMWQxZjIyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTQxNTE3Ii8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0icCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNNDAgMEgwVjQwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS1vcGFjaXR5PSIuMDQiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEyNTAiIGZpbGw9InVybCgjZykiLz48cmVjdCB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIxMjUwIiBmaWxsPSJ1cmwoI3ApIi8+PGNpcmNsZSBjeD0iNTAwIiBjeT0iNDUwIiByPSIxNDAiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTIwMCAxMDI1IEMyMDAgNzAwIDgwMCA3MDAgODAwIDEwMjUiIHN0cm9rZT0iI0M5QTY2QiIgc3Ryb2tlLW9wYWNpdHk9Ii43NSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTAwIiB5PSIxMTI1IiBmaWxsPSIjQzlBNjZCIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjIiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5QTEFDRUhPTERFUiBJTUFHRTwvdGV4dD48dGV4dCB4PSI1MDAiIHk9IjExNTUiIGZpbGw9IiNhN2E3YTciIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QWRkIHlvdXIgaW1hZ2UgdG8gdGhlIGltYWdlcyBmb2xkZXI8L3RleHQ+PC9zdmc+");}:root{--bg:#101112;--bg2:#191A1C;--card:#202123;--text:#F5F4F0;--muted:#A7A7A7;--accent:#C9A66B;--border:#303033;--ink:#101112;--accent-rgb:201,166,107}html[data-theme="midnight"]{--bg:#0A1020;--bg2:#0F1830;--card:#14203D;--text:#EAF0FF;--muted:#9AA9C7;--accent:#5B9BFF;--border:#233358;--ink:#06101F;--accent-rgb:91,155,255}html[data-theme="ember"]{--bg:#141414;--bg2:#1C1C1C;--card:#242424;--text:#F4F1EC;--muted:#A9A39B;--accent:#FF7A2F;--border:#3A3A3A;--ink:#141414;--accent-rgb:255,122,47}html[data-theme="slate"]{--bg:#14131A;--bg2:#1B1A24;--card:#232231;--text:#F1EFF8;--muted:#A9A6BD;--accent:#A78BFA;--border:#35334A;--ink:#14131A;--accent-rgb:167,139,250}html[data-theme="emerald"]{--bg:#0C1512;--bg2:#111D19;--card:#16261F;--text:#EAF5F0;--muted:#9DB5AB;--accent:#34D399;--border:#25403A;--ink:#07110D;--accent-rgb:52,211,153}
+html{scroll-padding-top:76px}
+.sr{position:absolute;left:-9999px}
+.img,.pimg,.mhero,.gimg,.heroimg,.aphoto{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--card)}
+.heroimg{aspect-ratio:4/5;max-height:76vh;border:1px solid var(--border);position:relative}
+.heroimg::after{content:"";position:absolute;inset:14px;border:1px solid rgba(var(--accent-rgb),.35)}
+.aphoto{aspect-ratio:4/5;border:1px solid var(--border)}
+.pimg{display:block;position:relative;aspect-ratio:4/3;transition:filter .4s}
+.pcard:hover .pimg{filter:brightness(1.12)}
+.pbody{padding:24px;display:flex;flex-direction:column;gap:6px;flex:1}.pbody h3{font-size:1.4rem;margin-bottom:6px}.pbody .btn{margin-top:auto;align-self:flex-start}.pbody .tags{margin:8px 0 16px}
+.pcard{background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;transition:border-color .3s}.pcard:hover{border-color:rgba(var(--accent-rgb),.6)}
+.pnum{position:absolute;right:14px;bottom:10px;font:700 2.6rem/1 var(--head);color:rgba(255,255,255,.85);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.badge{position:absolute;left:12px;bottom:12px;background:var(--bg);color:var(--accent);border:1px solid rgba(var(--accent-rgb),.6);font:600 .62rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
+.badge.static{position:static;display:inline-block;margin:6px 0 24px}.k-ongoing{background:var(--accent);color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+section[id]{scroll-margin-top:70px}
+.hdr{background:var(--bg);border-bottom:1px solid var(--border)}
+#navt{position:absolute;left:-9999px}
+.mini{display:flex;flex-wrap:wrap;gap:6px 22px;margin:4px 0 6px}.mini dt{font:600 .62rem/1 var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.mini dd{margin:3px 0 0;font:500 .9rem/1.2 var(--head)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tags li,.tag{font:500 .7rem/1 var(--head);letter-spacing:.08em;padding:7px 11px;border:1px solid var(--border);color:var(--muted);background:var(--bg2)}
+.ticks li{position:relative;padding:6px 0 6px 26px}.ticks li::before{content:"";position:absolute;left:0;top:16px;width:12px;height:1px;background:var(--accent)}
+.hlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}.hl{border-top:1px solid var(--accent);padding-top:18px}.hl span,.snum{font:700 .8rem/1 var(--head);color:var(--accent);letter-spacing:.14em}.hl h3{margin:12px 0 8px;font-size:1.25rem}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.skill h3{font-size:1.2rem;margin:14px 0}.skill li{padding:6px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:.95rem}.skill.dev{border-style:dashed}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.svc{display:flex;flex-direction:column;gap:12px}.svtop{display:flex;justify-content:space-between;color:var(--accent)}.svc h3{font-size:1.3rem}
+.price{border-top:1px solid var(--border);padding-top:14px;margin-top:auto}.price small{display:block;font:600 .62rem/1 var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}.price strong{font:600 1.5rem/1.1 var(--head);color:var(--accent)}.price .quote{font-size:1rem;color:var(--muted);font-weight:500}.svc .btn{align-self:flex-start}
+.steps li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}.steps li>span{font:700 1.6rem/1 var(--head);color:var(--accent);min-width:44px}.steps h3{font-size:1.1rem;letter-spacing:.1em;margin-bottom:6px}
+.facts{display:grid;grid-template-columns:1fr 1fr}.facts div{padding:14px 0;border-bottom:1px solid var(--border)}.facts dt{font:600 .62rem/1 var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.facts dd{margin:0;font:500 1.05rem/1.3 var(--head)}
+.reqs,.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin:34px 0}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.identity{font:500 1.1rem/1.3 var(--head);margin-bottom:22px}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.clist li{display:flex;flex-direction:column;padding:14px 0;border-bottom:1px solid var(--border);word-break:break-word}.clist a:hover{color:var(--accent)}
+.cform{display:flex;flex-direction:column;gap:16px}.cform label{display:flex;flex-direction:column;gap:7px;font:600 .68rem/1 var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cform input,.cform select,.cform textarea{background:var(--bg);color:var(--text);border:1px solid var(--border);padding:13px 14px;font:400 1rem/1.4 var(--body);letter-spacing:0;text-transform:none;border-radius:0;width:100%}
+.cform input:focus,.cform textarea:focus,.cform select:focus{outline:none;border-color:var(--accent)}
+.form-status{margin:0;min-height:1.4em}
+.modal{display:none;position:fixed;inset:0;z-index:300;background:var(--bg);overflow-y:auto}.modal:target{display:block}
+.mwrap{max-width:1100px;margin:0 auto;padding:30px 24px 80px}
+.close{position:sticky;top:12px;float:right;background:var(--card);border:1px solid var(--border);padding:11px 18px;font:600 .72rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase;z-index:2}.close:hover{border-color:var(--accent);color:var(--accent)}
+.mh{font-size:clamp(2rem,5vw,3.8rem);margin:6px 0 14px;clear:both}
+.mhero{aspect-ratio:16/8;border:1px solid var(--border);margin:6px 0}
+.h3{font-size:1.5rem;margin:38px 0 16px}
+.mnext{margin-top:50px;padding-top:30px;border-top:1px solid var(--border);text-align:center}.mnext a{font:600 clamp(1.4rem,4vw,2.4rem)/1.1 var(--head)}.mnext a:hover{color:var(--accent)}.mcta{text-align:center;margin-top:30px}
+.cf input{position:absolute;left:-9999px}.cf .chip{display:inline-block;margin:0 10px 10px 0;cursor:pointer}
+.cf input:checked+.chip{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.cf input:focus-visible+.chip{outline:2px solid var(--accent);outline-offset:2px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin-top:20px}
+.gimg{aspect-ratio:4/3;border:1px solid var(--border)}.gitem figcaption{display:flex;flex-direction:column;gap:6px;padding-top:14px;align-items:flex-start}.gitem{margin:0}
+#cf-AutoCAD:checked~.gallery .gitem:not([data-cat=AutoCAD]),#cf-Revit:checked~.gallery .gitem:not([data-cat=Revit]),#cf-Twinmotion:checked~.gallery .gitem:not([data-cat=Twinmotion]),#cf-Creative:checked~.gallery .gitem:not([data-cat=Creative]){display:none}
+.themes{display:flex;gap:8px;align-items:center}.themes button{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);cursor:pointer;padding:0}.themes button:hover{border-color:var(--text)}
+.ftr-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ftr-nav,.ftr-soc{display:flex;flex-direction:column;gap:10px}.ftr-nav a,.ftr-soc a{color:var(--muted);font:500 .8rem/1 var(--head);letter-spacing:.12em;text-transform:uppercase}.ftr-nav a:hover,.ftr-soc a:hover{color:var(--accent)}
+.ftr-bot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;flex-wrap:wrap}
+.cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,var(--bg),var(--bg2));border-top:1px solid var(--border)}.cta p{max-width:56ch;margin:18px auto 30px}.cta h2,.sec-head h2{font-size:clamp(2rem,4.2vw,3.4rem)}
+.sec-head{max-width:760px;margin-bottom:46px}.sec-head p{margin-top:16px}
+.closing{margin:40px 0 0;text-align:center;font:500 1.05rem/1.5 var(--head);color:var(--accent)}
+.hero-copy .btns{margin-top:30px}
+@media(max-width:1020px){.pgrid,.skills,.sgrid{grid-template-columns:repeat(2,1fr)}.ftr-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+ .burger{display:block;cursor:pointer}
+ #nav{position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 24px;border-bottom:1px solid var(--border);display:none;opacity:1;visibility:visible;transform:none}
+ #navt:checked~#nav{display:flex}
+ #nav a:not(.btn){padding:16px 0;border-bottom:1px solid var(--border)}
+ #nav .btn{margin-top:18px}
+ .hero-grid{grid-template-columns:1fr}.heroimg{order:-1;aspect-ratio:4/3;max-height:none}
+ .two,.about-grid,.contact-grid{grid-template-columns:1fr;gap:34px}.aphoto{max-width:420px}.hlgrid{grid-template-columns:1fr}
+ .tgroup{flex:1 1 100%;padding:14px 0;border-left:0;border-top:1px solid var(--border)}.tgroup:first-child{border-top:0}.tgroup ul{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .mhero{aspect-ratio:4/3}
+}
+@media(max-width:640px){.pgrid,.skills,.sgrid,.facts,.ftr-grid{grid-template-columns:1fr}.btn{width:100%}.btns .btn{flex:1 1 100%}.btn.sm{width:auto}.wrap{padding:0 18px}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="hdr"><div class="wrap hdr-in">
+<a class="brand" href="#home" aria-label="SAYEED home">SAYEED<span>.</span></a>
+<input type="checkbox" id="navt" class="sr" aria-label="Toggle menu">
+<nav id="nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a><a class="btn sm nav-cta" href="#contact">LET&rsquo;S TALK</a></nav>
+<label for="navt" class="burger" aria-label="Menu"><i></i><i></i><i></i></label>
+</div></header>
+<main id="main">
+
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div class="hero-copy"><p class="eyebrow">CIVIL ENGINEERING · BIM · ARCHITECTURAL DESIGN</p>
+<h1>Designing Spaces.<br><em>Building Visions.</em></h1>
+<p class="lead">I&#x27;m SAYEED, a Civil Engineer and BIM professional passionate about architectural design, residential planning, and construction. I combine technical knowledge with creative thinking to develop functional layouts, three-dimensional building models, and compelling architectural visualizations.</p>
+<div class="btns"><a class="btn" href="#projects">EXPLORE MY PROJECTS</a><a class="btn btn-ghost" href="#contact">LET&#x27;S DISCUSS YOUR PROJECT</a></div>
+<p class="loc"><i></i>PERNAMBUT, TAMIL NADU, INDIA</p></div>
+<div class="heroimg" role="img" aria-label="Architectural visualization" style="background-image:url('images/hero.jpg'),var(--ph-hero)"></div>
+</div></section>
+
+<section class="tools" id="tools"><div class="wrap">
+<div class="tools-head"><h2 class="label-lg">TOOLS &amp; SOFTWARE</h2><p class="muted">The tools behind my ideas, designs, and visual presentations.</p></div>
+<div class="tools-strip"><div class="tgroup"><h3>Engineering &amp; BIM</h3><ul><li class="tool"><b aria-hidden="true">R</b><span>Autodesk Revit</span></li><li class="tool"><b aria-hidden="true">A</b><span>AutoCAD</span></li><li class="tool"><b aria-hidden="true">Tm</b><span>Twinmotion</span></li></ul></div><div class="tgroup"><h3>Creative Design &amp; Editing</h3><ul><li class="tool"><b aria-hidden="true">Pr</b><span>Adobe Premiere Pro</span></li><li class="tool"><b aria-hidden="true">Ps</b><span>Adobe Photoshop</span></li><li class="tool"><b aria-hidden="true">Cc</b><span>CapCut Pro</span></li><li class="tool"><b aria-hidden="true">Ca</b><span>Canva</span></li></ul></div><div class="tgroup"><h3>Productivity &amp; Documentation</h3><ul><li class="tool"><b aria-hidden="true">X</b><span>Microsoft Excel</span></li></ul></div></div><p class="tools-close">DESIGN. MODEL. VISUALIZE. CREATE.</p></div></section>
+
+<section class="sec" id="about"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">About</p><h2>ENGINEERING KNOWLEDGE. ARCHITECTURAL VISION.</h2></div>
+<div class="about-grid"><div class="aphoto" role="img" aria-label="Portrait of V. SAYEED AHMED" style="background-image:url('images/profile.jpg'),var(--ph-prof)"></div>
+<div><p class="label">V. SAYEED AHMED</p><p class="identity">Civil Engineer | BIM Engineer | Architectural Designer</p><p>SAYEED is an emerging Civil Engineer and BIM professional with a strong interest in architectural design, residential building planning, three-dimensional visualization, project management, and construction.</p><p>With knowledge of AutoCAD, Revit, and Twinmotion, he enjoys transforming building requirements into thoughtfully planned architectural layouts, three-dimensional building models, and visually compelling presentations.</p><p>Through freelance assignments and independent design work, he has gained practical exposure to residential planning and architectural workflows.</p><p>He is committed to continuous learning, creative problem-solving, and developing the technical and coordination skills required to contribute to successful construction projects.</p>
+<p class="muted"><b style="color:var(--text)">B.E. Civil Engineering</b> &middot; C. Abdul Hakeem College of Engineering &amp; Technology (CAHCET)</p></div></div>
+<div class="hlgrid"><div class="hl"><span>01</span><h3>Technical Thinking</h3><p class="muted">Careful planning, drafting and documentation.</p></div><div class="hl"><span>02</span><h3>Creative Design</h3><p class="muted">Layouts and visuals that communicate design intent.</p></div><div class="hl"><span>03</span><h3>Continuous Growth</h3><p class="muted">Always learning new tools and construction know-how.</p></div></div></div></section>
+
+<section class="sec alt" id="skills" style="background:var(--bg2);border-block:1px solid var(--border)"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">Skills</p><h2>SKILLS &amp; TECHNICAL EXPERTISE</h2></div><div class="skills"><div class="card skill"><span class="snum">01</span><h3>Civil Engineering &amp; Architectural Planning</h3><ul><li>Residential Building Planning</li><li>Architectural Floor Plans</li><li>Building Layout Development</li><li>Construction Drawing Interpretation</li><li>Space Planning</li><li>Construction Documentation</li></ul></div><div class="card skill"><span class="snum">02</span><h3>CAD &amp; BIM</h3><ul><li>AutoCAD — 2D Drafting</li><li>Autodesk Revit — 3D Building Modelling</li><li>BIM Workflows</li><li>Architectural Model Development</li><li>Building Documentation</li></ul></div><div class="card skill"><span class="snum">03</span><h3>Architectural Visualization &amp; Creative Design</h3><ul><li>Twinmotion Rendering</li><li>Exterior Visualization</li><li>Front Elevation Presentation</li><li>Material and Lighting Visualization</li><li>Graphic Design</li><li>Video Editing</li></ul></div><div class="card skill"><span class="snum">04</span><h3>Project &amp; Construction Coordination</h3><ul><li>Project Planning Fundamentals</li><li>Construction Coordination</li><li>Project Documentation</li><li>Residential Construction Planning</li><li>Building Requirement Analysis</li></ul></div><div class="card skill dev"><span class="snum">05</span><h3>Currently Developing</h3><p class=note>Currently developing</p><ul><li>Quantity Estimation</li><li>Construction Cost Estimation</li></ul></div></div></div></section>
+
+<section class="sec" id="projects"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">Portfolio</p><h2>Projects &amp; Concept Works</h2><p class="muted">Delivered freelance work, independent concept studies and ongoing designs — labelled clearly so you always know what is completed, what is in progress, and what is exploratory.</p></div>
+<div class="pgrid"><article class="pcard"><a class="pimg" href="#project-01" aria-label="View G+1 RESIDENTIAL HOUSE" role="img" style="background-image:url('images/project-01.jpg'),var(--ph-render)"><span class="pnum">01</span><span class="badge k-completed">Freelance Project</span></a>
+<div class="pbody"><p class="label">Residential Architecture</p><h3>G+1 RESIDENTIAL HOUSE</h3><p class="muted">A G+1 residential design developed around the client&#x27;s space requirements.</p><dl class="mini"><div><dt>Plot</dt><dd>20&#x27; × 60&#x27;</dd></div><div><dt>Facing</dt><dd>North-facing</dd></div></dl><ul class="tags"><li>AutoCAD</li><li>Revit</li><li>Twinmotion</li></ul><a class="btn sm" href="#project-01">VIEW PROJECT</a></div></article><article class="pcard"><a class="pimg" href="#project-02" aria-label="View CONCEPT WORKS" role="img" style="background-image:url('images/concept-works.jpg'),var(--ph-gen)"><span class="pnum">02</span><span class="badge k-concept">Concept Work</span></a>
+<div class="pbody"><p class="label">Independent Architectural Design Studies</p><h3>CONCEPT WORKS</h3><p class="muted">Independent design concepts, software experiments, and architectural visualization studies.</p><ul class="tags"><li>AutoCAD</li><li>Revit</li><li>Twinmotion</li><li>Creative tools</li></ul><a class="btn sm" href="#project-02">VIEW CONCEPTS</a></div></article><article class="pcard"><a class="pimg" href="#project-03" aria-label="View RAISA&#x27;S HOUSE" role="img" style="background-image:url('images/project-03.jpg'),var(--ph-plan)"><span class="pnum">03</span><span class="badge k-ongoing">Ongoing Project</span></a>
+<div class="pbody"><p class="label">Residential Architecture</p><h3>RAISA&#x27;S HOUSE</h3><p class="muted">An ongoing compact residential design on a narrow plot.</p><dl class="mini"><div><dt>Plot</dt><dd>16&#x27; × 51&#x27;</dd></div><div><dt>Facing</dt><dd>West-facing</dd></div></dl><ul class="tags"><li>AutoCAD</li></ul><a class="btn sm" href="#project-03">VIEW PROJECT</a></div></article></div><p class="closing">Exploring architectural ideas through technical drawing, digital modelling, and visual storytelling.</p></div></section>
+
+<section class="sec" id="services" style="background:var(--bg2);border-block:1px solid var(--border)"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">Services</p><h2>Design, modelling &amp; visualization services</h2><p class="muted">Residential design support from first layout to finished visualization. Prices can be shown on each service, or discussed per project.</p></div>
+<div class="sgrid"><article class="card svc"><div class="svtop"><span class="snum">01</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12M9 21v-7h6v7"/></svg></div><h3>ARCHITECTURAL DESIGN</h3><p class="muted">Residential architectural planning focused on functional layouts, circulation, and efficient use of available space.</p><ul class="ticks"><li>Residential floor plans</li><li>Space planning</li><li>Room arrangements</li><li>Furniture layouts, where included</li></ul><ul class="tags"><li>AutoCAD</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><a class="btn sm" href="#contact" data-service="ARCHITECTURAL DESIGN">DISCUSS THIS SERVICE</a></article><article class="card svc"><div class="svtop"><span class="snum">02</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7zM3 7l9 5 9-5M12 12v10"/></svg></div><h3>BIM MODELLING</h3><p class="muted">Three-dimensional building modelling and architectural model development using Revit.</p><ul class="ticks"><li>Architectural 3D models</li><li>Building model views</li><li>Model-based presentations</li></ul><ul class="tags"><li>Revit</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><a class="btn sm" href="#contact" data-service="BIM MODELLING">DISCUSS THIS SERVICE</a></article><article class="card svc"><div class="svtop"><span class="snum">03</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg></div><h3>3D ARCHITECTURAL VISUALIZATION</h3><p class="muted">Architectural visualization that communicates residential design concepts through materials, lighting, and carefully composed renders.</p><ul class="ticks"><li>Exterior renders</li><li>Architectural perspectives</li><li>Material and lighting studies</li></ul><ul class="tags"><li>Twinmotion</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><a class="btn sm" href="#contact" data-service="3D ARCHITECTURAL VISUALIZATION">DISCUSS THIS SERVICE</a></article><article class="card svc"><div class="svtop"><span class="snum">04</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div><h3>AUTOCAD DRAFTING</h3><p class="muted">Architectural drafting and drawing development using AutoCAD.</p><ul class="ticks"><li>2D floor plans</li><li>Dimensioned layouts</li><li>Architectural drawing updates</li></ul><ul class="tags"><li>AutoCAD</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><a class="btn sm" href="#contact" data-service="AUTOCAD DRAFTING">DISCUSS THIS SERVICE</a></article><article class="card svc"><div class="svtop"><span class="snum">05</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div><h3>PROJECT PLANNING &amp; COORDINATION</h3><p class="muted">Support for project planning, construction documentation, and coordination of design information.</p><ul class="ticks"><li>Project documentation</li><li>Design information coordination</li></ul><ul class="tags"><li>Excel</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><a class="btn sm" href="#contact" data-service="PROJECT PLANNING &amp; COORDINATION">DISCUSS THIS SERVICE</a></article><article class="card svc"><div class="svtop"><span class="snum">06</span><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M5 20V10l7-6 7 6v10M10 20v-5h4v5"/></svg></div><h3>RESIDENTIAL CONSTRUCTION CONTRACTING</h3><p class="muted">Residential construction-related services and project discussions based on the agreed scope, available resources, and applicable local requirements.</p><ul class="ticks"><li>Scope discussion</li><li>Project coordination</li></ul><div class="price"><strong class="quote">Contact for quote</strong></div><p class="muted small">Scope and applicable local requirements are agreed before any commitment.</p><a class="btn sm" href="#contact" data-service="RESIDENTIAL CONSTRUCTION CONTRACTING">DISCUSS THIS SERVICE</a></article></div><p class="muted small" style="text-align:center;margin-top:30px">Every project is different — final scope and pricing are confirmed with you before work begins.</p></div></section>
+
+<section class="sec" id="approach"><div class="wrap two">
+<div><p class="eyebrow">Design philosophy</p><h2 class="h3" style="font-size:2rem">THOUGHTFUL PLANNING. CLEAR VISUALS. BETTER COLLABORATION.</h2><p class="muted">My approach begins with understanding project requirements, organizing spaces thoughtfully, developing clear architectural drawings, and using digital tools to communicate design intent. I value functional planning, visual clarity, attention to detail, and continuous improvement throughout the design process.</p></div>
+<ol class="steps"><li><span>01</span><div><h3>UNDERSTAND</h3><p class="muted">Understand the requirements, plot details, and intended use.</p></div></li><li><span>02</span><div><h3>PLAN</h3><p class="muted">Develop an appropriate design concept and functional layout.</p></div></li><li><span>03</span><div><h3>VISUALIZE</h3><p class="muted">Use CAD, BIM, and visualization tools where required.</p></div></li><li><span>04</span><div><h3>REFINE</h3><p class="muted">Review the design, incorporate agreed feedback, and prepare the required deliverables.</p></div></li></ol></div></section>
+
+<section class="sec" id="education" style="background:var(--bg2);border-block:1px solid var(--border)"><div class="wrap two">
+<div><p class="eyebrow">Education &amp; training</p><div class="card"><h3>B.E. Civil Engineering</h3><p>C. Abdul Hakeem College of Engineering &amp; Technology (CAHCET)</p></div></div>
+<div><p class="eyebrow">Additional technical training and software knowledge</p><ul class="tags"><li>BIM</li><li>AutoCAD</li><li>Revit</li><li>Twinmotion</li></ul><p class="muted small" style="margin-top:14px">Listed as technical training and software knowledge, not as formal certification.</p></div></div></section>
+
+<section class="sec" id="contact"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">Contact</p><h2>HAVE A PROJECT IN MIND?</h2><p class="muted">Whether you&#x27;re planning a residential building, exploring an architectural concept, or looking for CAD, BIM, or visualization support, let&#x27;s discuss your requirements.</p></div>
+<div class="contact-grid"><div><h3 class="h3" style="margin-top:0">V. SAYEED AHMED</h3><p class="muted">SAYEED.</p>
+<ul class="clist"><li><span class="label">Email</span><a href="mailto:sayeedshah83@gmail.com">sayeedshah83@gmail.com</a></li>
+<li><span class="label">Phone / WhatsApp</span><a href="tel:+919344403998">+91 93444 03998</a></li>
+<li><span class="label">Location</span><span>Pernambut, Vellore District, Tamil Nadu, India.</span></li>
+<li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/sayeedahmedv" target="_blank" rel="noopener noreferrer">linkedin.com/in/sayeedahmedv</a></li></ul>
+<div class="btns"><a class="btn" href="mailto:sayeedshah83@gmail.com">EMAIL ME</a><a class="btn btn-ghost" href="https://wa.me/919344403998" target="_blank" rel="noopener noreferrer">WHATSAPP ME</a><a class="btn btn-ghost" href="https://www.linkedin.com/in/sayeedahmedv" target="_blank" rel="noopener noreferrer">CONNECT ON LINKEDIN</a></div></div>
+<form class="card cform" id="cform" action="mailto:sayeedshah83@gmail.com" method="post" enctype="text/plain"><h3 class="h3" style="margin:0">Send a message</h3>
+<label>Full name<input name="Name" id="f-name" required minlength="2" autocomplete="name"></label>
+<label>Email address<input name="Email" id="f-email" type="email" required autocomplete="email"></label>
+<label>Project type<select name="Project type" id="f-type"><option value="">Select&hellip;</option><option>Residential building design</option><option>Architectural floor plans (AutoCAD)</option><option>BIM modelling (Revit)</option><option>3D visualization (Twinmotion)</option><option>Project planning &amp; coordination</option><option>Residential construction enquiry</option><option>Job / recruitment opportunity</option><option>Other</option><option>ARCHITECTURAL DESIGN</option><option>BIM MODELLING</option><option>3D ARCHITECTURAL VISUALIZATION</option><option>AUTOCAD DRAFTING</option><option>PROJECT PLANNING &amp; COORDINATION</option><option>RESIDENTIAL CONSTRUCTION CONTRACTING</option></select></label>
+<label>Project requirements<textarea name="Requirements" id="f-req" rows="3" placeholder="Plot size, rooms needed, orientation, budget range&hellip;"></textarea></label>
+<label>Message<textarea name="Message" id="f-msg" rows="5" required minlength="5"></textarea></label>
+<button class="btn" type="submit">SEND MESSAGE</button><p class="form-status" id="fstat" role="status" aria-live="polite"></p>
+<p class="muted small">Privacy notice: the details you enter are used only to reply to your enquiry and are not shared with third parties. Sending opens your email app with the message ready.</p></form></div></div></section>
+
+</main>
+<footer class="ftr"><div class="wrap"><div class="ftr-grid">
+<div><a class="brand" href="#home">SAYEED<span>.</span></a><p class="muted">Civil Engineer | BIM Engineer | Architectural Designer</p><p class="muted">Pernambut, Tamil Nadu, India.</p></div>
+<nav class="ftr-nav" aria-label="Footer navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+<div class="ftr-soc"><a href="https://www.linkedin.com/in/sayeedahmedv" target="_blank" rel="noopener noreferrer">LinkedIn</a><div class="themes" role="group" aria-label="Colour theme"><span class="muted small">Theme</span><button type="button" data-theme="champagne" title="champagne" aria-label="champagne theme" style="background:#C9A66B"></button><button type="button" data-theme="midnight" title="midnight" aria-label="midnight theme" style="background:#5B9BFF"></button><button type="button" data-theme="ember" title="ember" aria-label="ember theme" style="background:#FF7A2F"></button><button type="button" data-theme="slate" title="slate" aria-label="slate theme" style="background:#A78BFA"></button><button type="button" data-theme="emerald" title="emerald" aria-label="emerald theme" style="background:#34D399"></button></div></div></div>
+<div class="ftr-bot"><span>&copy; <span id="yr">2026</span> SAYEED. All rights reserved.</span><a class="totop btn sm btn-ghost" href="#home">&uarr; TOP</a></div></div></footer>
+<div class="modal" id="project-01"><div class="mwrap"><a class="close" href="#projects" aria-label="Close project">&#10005; Close</a><p class="eyebrow">Project 01 &middot; Residential Architecture</p><h2 class="mh">G+1 RESIDENTIAL HOUSE</h2><span class="badge static k-completed">Freelance Project</span><div class="mhero" role="img" aria-label="G+1 RESIDENTIAL HOUSE" style="background-image:url('images/project-01.jpg'),var(--ph-render)"></div><div class="two"><div><h3 class="h3">Project overview</h3><p>A G+1 residential design developed around the client&#x27;s space requirements, incorporating functional room arrangements, architectural planning, three-dimensional building modelling, and architectural visualization.</p></div><div><h3 class="h3">Site information</h3><dl class="facts"><div><dt>Project type</dt><dd>Residential Architecture</dd></div><div><dt>Plot dimensions</dt><dd>20&#x27; × 60&#x27;</dd></div><div><dt>Plot area</dt><dd>1,200 sq. ft.</dd></div><div><dt>Orientation</dt><dd>North-facing</dd></div><div><dt>Building type</dt><dd>Ground floor + First floor</dd></div><div><dt>Status</dt><dd>Freelance Project</dd></div></dl></div></div><h3 class="h3">Client requirements</h3><div class="reqs"><div class="card"><h4 class="label">Ground floor</h4><ul class="ticks"><li>One master bedroom with attached bathroom</li><li>Two additional bedrooms</li><li>One kitchen</li><li>One living area</li><li>One OTS space</li><li>One common bathroom</li></ul></div><div class="card"><h4 class="label">First floor</h4><ul class="ticks"><li>Three bedrooms, including a master bedroom with attached bathroom</li><li>One kitchen</li><li>One living area</li><li>One OTS space</li><li>One common bathroom</li></ul></div></div><h3 class="h3">Design objectives</h3><ul class="ticks"><li>Arrange rooms functionally on both floors within a 20&#x27; × 60&#x27; plot</li><li>Meet the client&#x27;s room and space requirements</li><li>Communicate the design through plans, a 3D model and renders</li></ul><h3 class="h3">SAYEED&rsquo;s contribution</h3><div class="stages"><div class="card"><p class="label">Stage 01 — AutoCAD</p><h4>2D architectural planning</h4><p class="muted">2D architectural floor plans, room arrangements, and space planning.</p></div><div class="card"><p class="label">Stage 02 — Revit</p><h4>3D building model</h4><p class="muted">The 3D building model and selected architectural views.</p></div><div class="card"><p class="label">Stage 03 — Twinmotion</p><h4>Front elevation &amp; renders</h4><p class="muted">Front elevation design and completed architectural renderings.</p></div></div><h3 class="h3">Software used</h3><ul class="tags"><li>AutoCAD</li><li>Revit</li><li>Twinmotion</li></ul><div class="mnext"><p class="label">Next project</p><a href="#project-02">02 CONCEPT WORKS &rarr;</a></div><div class="mcta"><a class="btn" href="#contact">LET&#x27;S TALK</a></div></div></div><div class="modal" id="project-02"><div class="mwrap"><a class="close" href="#projects" aria-label="Close project">&#10005; Close</a><p class="eyebrow">Project 02 &middot; Independent Architectural Design Studies</p><h2 class="mh">CONCEPT WORKS</h2><p class="lead">Exploring Ideas. Visualizing Possibilities.</p><span class="badge static k-concept">Concept Work</span><div class="mhero" role="img" aria-label="CONCEPT WORKS" style="background-image:url('images/concept-works.jpg'),var(--ph-gen)"></div><div class="two"><div><h3 class="h3">Project overview</h3><p>A gallery of independent design concepts, software experiments, and architectural visualization work. These are conceptual studies — not client projects or completed buildings.</p><p class="note">Independent concept work &mdash; not a completed building or client project.</p></div><div><h3 class="h3">Site information</h3><dl class="facts"><div><dt>Project type</dt><dd>Independent Architectural Design Studies</dd></div><div><dt>Building type</dt><dd>Conceptual / Personal Portfolio Work</dd></div><div><dt>Status</dt><dd>Concept Work</dd></div></dl></div></div><h3 class="h3">Concept gallery</h3><div class="cf"><input type="radio" name="cf" id="cf-all" checked><label for="cf-all" class="chip">All Concepts</label><input type="radio" name="cf" id="cf-AutoCAD"><label for="cf-AutoCAD" class="chip">AutoCAD</label><input type="radio" name="cf" id="cf-Revit"><label for="cf-Revit" class="chip">Revit</label><input type="radio" name="cf" id="cf-Twinmotion"><label for="cf-Twinmotion" class="chip">Twinmotion</label><input type="radio" name="cf" id="cf-Creative"><label for="cf-Creative" class="chip">Creative Work</label><div class="gallery"><figure class="gitem" data-cat="AutoCAD"><div class="gimg" role="img" aria-label="Architectural Planning" style="background-image:url('images/concept-planning.jpg'),var(--ph-plan)"></div><figcaption><span class="tag">AutoCAD</span><strong>Architectural Planning</strong><span class="muted">Conceptual 2D floor plans and drafting studies.</span></figcaption></figure><figure class="gitem" data-cat="Revit"><div class="gimg" role="img" aria-label="BIM &amp; 3D Modelling" style="background-image:url('images/concept-revit.jpg'),var(--ph-model)"></div><figcaption><span class="tag">Revit</span><strong>BIM &amp; 3D Modelling</strong><span class="muted">Independent Revit modelling work.</span></figcaption></figure><figure class="gitem" data-cat="Twinmotion"><div class="gimg" role="img" aria-label="Architectural Visualization" style="background-image:url('images/concept-twinmotion.jpg'),var(--ph-render)"></div><figcaption><span class="tag">Twinmotion</span><strong>Architectural Visualization</strong><span class="muted">Architectural visualization experiments.</span></figcaption></figure><figure class="gitem" data-cat="Creative"><div class="gimg" role="img" aria-label="Creative Design &amp; Digital Media" style="background-image:url('images/concept-creative.jpg'),var(--ph-gen)"></div><figcaption><span class="tag">Creative Work</span><strong>Creative Design &amp; Digital Media</strong><span class="muted">Presentation boards and video edits.</span></figcaption></figure></div></div><p class="closing">Exploring architectural ideas through technical drawing, digital modelling, and visual storytelling.</p><h3 class="h3">Software used</h3><ul class="tags"><li>AutoCAD</li><li>Revit</li><li>Twinmotion</li><li>Creative tools</li></ul><div class="mnext"><p class="label">Next project</p><a href="#project-03">03 RAISA&#x27;S HOUSE &rarr;</a></div><div class="mcta"><a class="btn" href="#contact">LET&#x27;S TALK</a></div></div></div><div class="modal" id="project-03"><div class="mwrap"><a class="close" href="#projects" aria-label="Close project">&#10005; Close</a><p class="eyebrow">Project 03 &middot; Residential Architecture</p><h2 class="mh">RAISA&#x27;S HOUSE</h2><span class="badge static k-ongoing">Ongoing Project</span><div class="mhero" role="img" aria-label="RAISA&#x27;S HOUSE" style="background-image:url('images/project-03.jpg'),var(--ph-plan)"></div><div class="two"><div><h3 class="h3">Project overview</h3><p>An ongoing compact residential design focused on functional planning, efficient use of a narrow plot, and the integration of essential residential spaces with parking and natural-light provisions.</p><p class="note">This is an ongoing project and is not yet completed.</p></div><div><h3 class="h3">Site information</h3><dl class="facts"><div><dt>Project type</dt><dd>Residential Architecture</dd></div><div><dt>Plot dimensions</dt><dd>16&#x27; × 51&#x27;</dd></div><div><dt>Plot area</dt><dd>816 sq. ft.</dd></div><div><dt>Orientation</dt><dd>West-facing</dd></div><div><dt>Status</dt><dd>Ongoing Project</dd></div></dl></div></div><h3 class="h3">Client requirements</h3><div class="reqs"><div class="card"><h4 class="label">Client requirements</h4><ul class="ticks"><li>One master bedroom with attached bathroom</li><li>One additional bedroom</li><li>One living area</li><li>One kitchen</li><li>One OTS space</li><li>One common bathroom</li><li>Car parking within the plot</li></ul></div></div><h3 class="h3">Design objectives</h3><ul class="ticks"><li>Plan essential residential spaces efficiently on a narrow 16&#x27; × 51&#x27; plot</li><li>Provide car parking within the plot</li><li>Provide natural-light provisions</li></ul><h3 class="h3">SAYEED&rsquo;s contribution</h3><div class="stages"><div class="card"><p class="label">Work to date — AutoCAD</p><h4>2D architectural planning</h4><p class="muted">Room arrangements, compact-site space planning, kitchen and living-area organization, OTS placement, and parking arrangement.</p></div></div><h3 class="h3">Software used</h3><ul class="tags"><li>AutoCAD</li></ul><div class="mnext"><p class="label">Next project</p><a href="#project-01">01 G+1 RESIDENTIAL HOUSE &rarr;</a></div><div class="mcta"><a class="btn" href="#contact">LET&#x27;S TALK</a></div></div></div>
+<script>
+(function(){
+ var d=document,q=function(s){return d.querySelector(s)};
+ q('#yr').textContent=new Date().getFullYear();
+ try{var t=localStorage.getItem('sayeed_theme');if(t)d.documentElement.setAttribute('data-theme',t);}catch(x){}
+ d.querySelectorAll('.themes button').forEach(function(b){b.onclick=function(){var k=b.getAttribute('data-theme');d.documentElement.setAttribute('data-theme',k);try{localStorage.setItem('sayeed_theme',k)}catch(x){}}});
+ d.querySelectorAll('#nav a').forEach(function(a){a.onclick=function(){q('#navt').checked=false}});
+ d.querySelectorAll('[data-service]').forEach(function(a){a.addEventListener('click',function(){var s=a.getAttribute('data-service'),sel=q('#f-type');for(var i=0;i<sel.options.length;i++)if(sel.options[i].text===s)sel.selectedIndex=i;})});
+ q('#cform').addEventListener('submit',function(ev){
+  ev.preventDefault();var n=q('#f-name').value.trim(),m=q('#f-email').value.trim(),g=q('#f-msg').value.trim(),st=q('#fstat');
+  if(n.length<2||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)||g.length<5){st.textContent='Please fill in your name, a valid email and a short message.';return;}
+  var body='Name: '+n+'\nEmail: '+m+'\nProject type: '+q('#f-type').value+'\n\nRequirements:\n'+q('#f-req').value+'\n\nMessage:\n'+g;
+  st.textContent='Opening your email app\u2026 if nothing opens, email sayeedshah83@gmail.com directly.';
+  location.href='mailto:sayeedshah83@gmail.com?subject='+encodeURIComponent('Portfolio enquiry: '+(q('#f-type').value||'General'))+'&body='+encodeURIComponent(body);
+ });
+})();
+</script>
+</body>
+</html>
